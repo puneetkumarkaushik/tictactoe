@@ -65,13 +65,13 @@ class Grid extends Component {
         const updatedBoxes = boxes.map(item => {
             if(item.index === index && item.mark === ''){
                 item.mark = this.state.turn;
+                this.changeTurn();
             }      
             return item;
         });
 
         this.setState({ boxes : updatedBoxes });
         this.verify();
-        this.changeTurn();
     }
 
     reset = () => {
